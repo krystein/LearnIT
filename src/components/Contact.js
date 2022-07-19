@@ -26,6 +26,7 @@ const ContactContainer = styled.section`
     line-height: 20px;
     text-align: center;
     color: #ff9f0d;
+    padding-left: 12px;
   }
   @media Screen and (max-width: 1200px) {
     display: grid;

@@ -28,6 +28,7 @@ const DonatePage = styled.div`
   h5 {
     padding: 10px;
     color: #143a5a;
+    font-size: 0.8rem;
   }
   .Donate {
     display: flex;
@@ -53,7 +54,7 @@ const Donateh1 = styled.div`
   justify-content: center;
   font-family: Laila, sans-serif;
   font-weight: 700;
-  font-size: 1rem;
+  font-size: 1.5rem;
   color: #143a5a;
 `;
 const Donatecontent = styled.div`
@@ -97,6 +98,11 @@ const Input = styled.div`
 `;
 const Input1 = styled.div`
   padding: 10px;
+  label{
+    font-size: 0.8rem;
+    font-weight: 400;
+    color: #143a5a;
+  }
 `;
 const Donatebtn1 = styled.div`
   padding: 10px;
