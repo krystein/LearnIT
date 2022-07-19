@@ -77,28 +77,28 @@ const Assignmentpage = styled.div`
   grid-gap: 10px;
   width: 100%;
   background-color: #ffffff;
-  box-shadow: 0.25rem 0.25rem 3.38rem rgba(217, 217, 217, 0.25);
+  box-shadow: 1.25rem 1.25rem 3.38rem 3.38rem rgba(217, 217, 217, 0.25);
   @media Screen and (max-width: 1200px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
-    text-align: center;
   }
   @media Screen and (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
-    text-align: center;
   }
   @media Screen and (max-width: 480px) {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
-    text-align: center;
   }
   div {
     width: 25%;
     padding: 40px;
+    @media Screen and (max-width: 1200px) {
+      width: 100%;
+    }
   }
   .ProjectGoal {
     color: #979797;
