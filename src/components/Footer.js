@@ -20,7 +20,8 @@ const Footercontent = styled.div`
   justify-content: space-evenly;
   @media Screen and (max-width: 768px) {
     display: grid;
-    justify-content: center;
+    justify-content: space-between;
+    margin-left: 30px;
   }
 `;
 const Footercontent1 = styled.div`
