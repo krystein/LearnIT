@@ -82,16 +82,19 @@ const Assignmentpage = styled.div`
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    text-align: center;
   }
   @media Screen and (max-width: 768px) {
     display: grid;
     grid-template-columns: 1fr 1fr;
     grid-gap: 10px;
+    text-align: center;
   }
   @media Screen and (max-width: 480px) {
     display: grid;
     grid-template-columns: 1fr;
     grid-gap: 10px;
+    text-align: center;
   }
   div {
     width: 25%;
