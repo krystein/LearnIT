@@ -11,6 +11,7 @@ import Call from "../img/Call.svg";
 const HeroContainer = styled.section`
   display: flex;
   width: 100%;
+
   @media Screen and (max-width: 1200px) {
     display: grid;
     justify-contents: center;
@@ -101,11 +102,9 @@ const HeroContent = styled.div`
     text-decoration: none;
     @media Screen and (max-width: 768px) {
       font-size: 1rem;
-      
     }
     @media Screen and (max-width: 480px) {
       font-size: 1rem;
-      
     }
   }
   button {
@@ -182,7 +181,7 @@ const Herop = styled.div`
   margin: 0rem 3.5rem 1rem 10rem;
   color: #979797;
   font-family: Inter, sans-serif;
-  font-size: clamp(0.8rem, 8vw, 1.2em);
+  font-size: clamp(0.7rem, 7vw, 1.2em);
   font-weight: 500;
   line-height: 1.7rem;
   @media Screen and (max-width: 1200px) {
@@ -194,6 +193,7 @@ const Herop = styled.div`
     margin-left: 0rem;
     text-align: center;
     margin-bottom: 20px;
+    padding: 0px 20px;
   }
   @media Screen and (max-width: 480px) {
     margin-left: 0rem;
@@ -206,9 +206,9 @@ const Img = styled.img`
   padding: 2rem;
 `;
 const NavMenuLink = styled.a`
-text-decoration: none;
-display: flex;
-align-items: center;  
+  text-decoration: none;
+  display: flex;
+  align-items: center;
 `;
 
 const Hero = () => {

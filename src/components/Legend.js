@@ -91,6 +91,7 @@ const LegendContent1 = styled.div`
     .bt {
       display: grid;
       justify-content: center;
+      margin: 10px 0px;
     }
   }
   button {

@@ -1,18 +1,24 @@
-import React from "react";
+import React, { useState, useRef } from "react";
 
 //import components
 import styled from "styled-components";
 import Arrow from "../img/Arrow.svg";
 import Arrow2 from "../img/Arrow2.svg";
 import Arrow3 from "../img/Arrow-right.svg";
-import Image1 from "../img/Rectangle-45.png";
-import Image2 from "../img/Rectangle-46.png";
-import Image3 from "../img/Rectangle-47.png";
+import { principleData } from "../data/principleData";
 
 const PrinciplesContainer = styled.section`
   padding: 70px;
   @media Screen and (max-width: 1200px) {
     padding: 20px;
+  }
+  .wrapper {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-gap: 20px;
+    @media Screen and (max-width: 1200px) {
+      grid-template-columns: 1fr;
+    }
   }
 `;
 const PrincipleContent = styled.div`
@@ -36,31 +42,22 @@ const PrincipleContent = styled.div`
     font-weight: 700;
   }
 `;
+const Principlewrapper = styled.div`
+  @media screen and (max-width: 768px) {
+    display: ${({ xy, current }) => {
+      return xy === current ? "inline" : "none";
+    }};
+  }
+`;
 const PrincipleContent1 = styled.div`
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  grid-gap: 30px;
-  padding: 20px 70px;
-  @media Screen and (max-width: 1200px) {
-    grid-template-columns: 1fr;
-    grid-gap: 30px;
-    padding: 20px 100px;
-  }
-  @media Screen and (max-width: 768px) {
-    grid-template-columns: 1fr;
-    grid-gap: 30px;
-    padding: 20px 70px;
-  }
-  @media Screen and (max-width: 480px) {
-    grid-template-columns: 1fr;
-    grid-gap: 30px;
-    padding: 20px 40px;
-  }
 `;
 const PrinciplePage = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
+  @media Screen and (max-width: 768px) {
+    display: grid;
+  }
   .page {
     font-family: Laila, sans-serif;
     font-size: 1.8rem;
@@ -68,6 +65,9 @@ const PrinciplePage = styled.div`
   div {
     display: flex;
     justify-content: right;
+    @media Screen and (max-width: 768px) {
+      justify-content: space-between;
+    }
   }
   button {
     background-color: #143a5a;
@@ -131,6 +131,24 @@ const Principleh2 = styled.div`
 `;
 
 const Principles = () => {
+  const [current, setCurrent] = useState(0);
+  const length = principleData.length;
+  const timeout = useRef(null);
+  const nextSlide = () => {
+    if (timeout.current) {
+      clearTimeout(timeout.current);
+    }
+    setCurrent(current === length - 1 ? 0 : current + 1);
+  };
+  const prevSlide = () => {
+    if (timeout.current) {
+      clearTimeout(timeout.current);
+    }
+    setCurrent(current === 0 ? length - 1 : current - 1);
+  };
+  if (!Array.isArray(principleData) || principleData.length <= 0) {
+    return null;
+  }
   return (
     <PrinciplesContainer>
       <PrincipleContent>
@@ -140,49 +158,34 @@ const Principles = () => {
         </div>
         <PrinciplePage>
           <h1 className="page">Guiding Principles</h1>
-          <div>
+          <div className="bt">
             <button>
-              <img src={Arrow2} alt="" />
+              <img src={Arrow2} alt="" onClick={prevSlide} />
             </button>
             <button className="btn">
-              <img src={Arrow3} alt="" />
+              <img src={Arrow3} alt="" onClick={nextSlide} />
             </button>
           </div>
         </PrinciplePage>
       </PrincipleContent>
-      <PrincipleContent1>
-        <div>
-          <PrincipleImg src={Image1} alt="" />
-          <PrincipleH>Principle 1 – Building Community Capacity </PrincipleH>
-          <Principleh2>
-            By working in partnership with local organizations throughout the
-            communities where Rescue for Christ Foundation serves and beyond,
-            the Foundation will seek to actively <p>Learn more...</p>
-          </Principleh2>
-        </div>
-        <div>
-          <PrincipleImg src={Image2} alt="" />
-          <PrincipleH>
-            Principle 2 – Understanding the Changing Nature of our Communities
-          </PrincipleH>
-          <Principleh2>
-            To be strategic in all our activities, we need to know our
-            communities well. This involves spending time in community
-            consultation <p>Learn more...</p>
-          </Principleh2>
-        </div>
-        <div>
-          <PrincipleImg src={Image3} alt="" />
-          <PrincipleH>
-            Principle 3 – Creating Opportunities for Dialogue
-          </PrincipleH>
-          <Principleh2>
-            Because of our broad mandate to nurture a vital community, we may
-            engage people with different ideas and points of view
-            <p>Learn more...</p>
-          </Principleh2>
-        </div>
-      </PrincipleContent1>
+      <div className="wrapper">
+        {principleData.map((item, index) => {
+          return (
+            <Principlewrapper key={index} xy={index} current={current}>
+              <PrincipleContent1>
+                <div>
+                  <PrincipleImg src={item.Img} alt="" />
+                  <PrincipleH>{item.Title}</PrincipleH>
+                  <Principleh2>
+                    {item.Page}
+                    <p>{item.Pge}</p>
+                  </Principleh2>
+                </div>
+              </PrincipleContent1>
+            </Principlewrapper>
+          );
+        })}
+      </div>
     </PrinciplesContainer>
   );
 };
