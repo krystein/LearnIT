@@ -10,7 +10,6 @@ import { msData } from "../data/msData";
 
 const TestimonialContainer = styled.section`
   display: grid;
-  height: 100vh;
   justify-content: center;
   padding: 70px;
   @media Screen and (max-width: 1200px) {
