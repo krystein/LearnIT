@@ -2,12 +2,21 @@ import React from "react";
 import { NavLink } from "react-router-dom";
 
 //import components
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image from "../img/Group-25.png";
 import Arrow from "../img/Arrow.svg";
 import Img from "../img/image-11.png";
 import Img2 from "../img/tick-square.png";
 import Img3 from "../img/Rectangle-55.png";
+
+const Activitiesanimation = keyframes`
+to {left: 0px;}
+from {left: -400px;}
+`;
+const Activityanimation = keyframes`
+to {right: 0px;}
+from {right: -400px;}
+`;
 
 const ActivityContainer = styled.section`
   padding: 70px;
@@ -177,6 +186,24 @@ const ActivityContent2 = styled.div`
     }
   }
 `;
+const Activitypages = styled.div`
+  @media screen and (max-width: 1200px) {
+    position: relative;
+    animation-name: ${Activitiesanimation};
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+  }
+`;
+const Activitypages1 = styled.div`
+  @media screen and (max-width: 1200px) {
+    position: relative;
+    animation-name: ${Activityanimation};
+    animation-duration: 3s;
+    animation-iteration-count: 1;
+    animation-timing-function: ease-in-out;
+  }
+`;
 
 const Activity = () => {
   return (
@@ -193,7 +220,7 @@ const Activity = () => {
             people, activities and organizations in the communities we serve.
           </p>
           <Activitypage>
-            <div>
+            <Activitypages>
               <div className="Activity">
                 <img src={Img2} alt="" />
                 <h4>Build homes for accommodation for children</h4>
@@ -226,8 +253,8 @@ const Activity = () => {
                 <img src={Img2} alt="" />
                 <h4>Well-equipped library</h4>
               </div>
-            </div>
-            <div>
+            </Activitypages>
+            <Activitypages1>
               <div className="Activity">
                 <img src={Img2} alt="" />
                 <h4>Mini finance bank</h4>
@@ -264,7 +291,7 @@ const Activity = () => {
                 <img src={Img2} alt="" />
                 <h4>Gym Center</h4>
               </div>
-            </div>
+            </Activitypages1>
           </Activitypage>
         </ActivityContent1>
         <ActivityContent>

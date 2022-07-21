@@ -9,13 +9,17 @@ import { principleData } from "../data/principleData";
 
 const PrinciplesContainer = styled.section`
   padding: 70px;
-  @media Screen and (max-width: 1200px) {
-    padding: 20px;
+  @media screen and (max-width: 1200px) {
+    padding: 100px;
+  }
+  @media screen and (max-width: 1200px) {
+    padding: 50px;
   }
   .wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-gap: 20px;
+    padding: 0px 70px;
     @media Screen and (max-width: 1200px) {
       grid-template-columns: 1fr;
     }
@@ -49,14 +53,13 @@ const Principlewrapper = styled.div`
     }};
   }
 `;
-const PrincipleContent1 = styled.div`
-`;
+const PrincipleContent1 = styled.div``;
 const PrinciplePage = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
   @media Screen and (max-width: 768px) {
-    display: grid;
+    display: block;
   }
   .page {
     font-family: Laila, sans-serif;

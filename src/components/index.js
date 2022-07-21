@@ -19,7 +19,7 @@ import ContactForm from "./ContactForm";
 // navbar
 import Navbar from "./Navbar";
 
-const Index = ({isOpen,toggle}) => {
+const Index = ({ isOpen, toggle }) => {
   return (
     <Router>
       <Navbar toggle={toggle} />

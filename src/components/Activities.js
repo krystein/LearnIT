@@ -1,7 +1,7 @@
 import React from "react";
 
 //import components
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Rectangle from "../img/Rectangle-15.png";
 import Rectangle1 from "../img/Rectangle-16.png";
 import Rectangle2 from "../img/Rectangle-17.png";
@@ -10,6 +10,15 @@ import Rectangle4 from "../img/Rectangle-19.png";
 import Rectangle5 from "../img/Rectangle-20.png";
 import Arrow from "../img/Arrow.svg";
 import Arrow1 from "../img/Arrow-1.svg";
+
+const Activitiesanimation = keyframes`
+to {left: 0px;}
+from {left: -400px;}
+`;
+const Activityanimation = keyframes`
+to {right: 0px;}
+from {right: -400px;}
+`;
 
 const ActivitiesContainer = styled.section`
   padding: 70px;
@@ -112,6 +121,30 @@ const Activitiesh1 = styled.div`
   font-size: 1.8rem;
   font-weight: 700;
 `;
+const Activitiespages = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+  animation-name: ${Activitiesanimation};
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+`;
+const Activitypages = styled.div`
+  display: flex;
+  position: relative;
+  width: 100%;
+  animation-name: ${Activityanimation};
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  @media screen and (max-width: 768px) {
+    display: block;
+  }
+`;
 
 const Activities = () => {
   return (
@@ -123,20 +156,24 @@ const Activities = () => {
       </div>
       <Activitiesh1>Our Activities</Activitiesh1>
       <ActivitiesPage>
-        <ActivitiesContent>
-          <ActivitiesImg src={Rectangle} alt="" />
-        </ActivitiesContent>
-        <ActivitiesContent1>
-          <ActivitiesImgs src={Rectangle1} alt="" />
-          <ActivitiesImgs src={Rectangle2} alt="" />
-        </ActivitiesContent1>
-        <ActivitiesContent>
-          <ActivitiesImg src={Rectangle3} alt="" />
-        </ActivitiesContent>
-        <ActivitiesContent1>
-          <ActivitiesImgs src={Rectangle4} alt="" />
-          <ActivitiesImgs src={Rectangle5} alt="" />
-        </ActivitiesContent1>
+        <Activitiespages>
+          <ActivitiesContent>
+            <ActivitiesImg src={Rectangle} alt="" />
+          </ActivitiesContent>
+          <ActivitiesContent1>
+            <ActivitiesImgs src={Rectangle1} alt="" />
+            <ActivitiesImgs src={Rectangle2} alt="" />
+          </ActivitiesContent1>
+        </Activitiespages>
+        <Activitypages>
+          <ActivitiesContent>
+            <ActivitiesImg src={Rectangle3} alt="" />
+          </ActivitiesContent>
+          <ActivitiesContent1>
+            <ActivitiesImgs src={Rectangle4} alt="" />
+            <ActivitiesImgs src={Rectangle5} alt="" />
+          </ActivitiesContent1>
+        </Activitypages>
       </ActivitiesPage>
     </ActivitiesContainer>
   );

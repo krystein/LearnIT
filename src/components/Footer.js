@@ -11,7 +11,9 @@ import Image6 from "../img/Twitter.svg";
 import Image7 from "../img/Linkedin.svg";
 import Image3 from "../img/Location.svg";
 
-const FooterContainer = styled.section``;
+const FooterContainer = styled.section`
+  width: 100%;
+`;
 const Footercontent = styled.div`
   padding: 20px 0px;
   padding-bottom: 40px;
@@ -78,7 +80,7 @@ const Footerpage1 = styled.div`
 `;
 const Footerpage2 = styled.div`
   line-height: 40px;
-  @media Screen and (max-width: 768px){
+  @media Screen and (max-width: 768px) {
     line-height: 30px;
     margin-bottom: 20px;
   }
@@ -103,11 +105,11 @@ const Footerpage3 = styled.div`
     height: 40px;
     width: 100px;
     color: #fff;
-    font-family: share tech;
-    font-size: 0.8rem;
-    font-weight: 400;
+    font-weight: 500;
     letter-spacing: 0em;
     text-align: center;
+    font-family: Share Tech;
+    font-size: 14px;
   }
   h2 {
     font-family: Inter;

@@ -1,7 +1,7 @@
 import React from "react";
 
 //import components
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image1 from "../img/Workinpartnership.svg";
 import Image2 from "../img/Engageincommunity.svg";
 import Image3 from "../img/Supportorganizations.svg";
@@ -9,9 +9,24 @@ import Image4 from "../img/IOS.svg";
 import Arrow from "../img/Arrow.svg";
 import Arrow1 from "../img/Arrow-1.svg";
 
+const Float = keyframes`
+0% {
+  box-shadow: 0 0px 0px 0px rgba(0,0,0,0.6);
+  transform: translatey(0px);
+}
+50% {
+    box-shadow: 0 0px 0px 0px rgba(0,0,0,0.2);
+  transform: translatey(-10px);
+}
+100% {
+    box-shadow: 0 0px 0px 0px rgba(0,0,0,0.6);
+  transform: translatey(0px);
+}
+`;
+
 const LegendContainer = styled.section`
   padding: 70px;
-  @media Screen and (max-width: 1200px){
+  @media Screen and (max-width: 1200px) {
     padding: 20px;
   }
 `;
@@ -142,9 +157,9 @@ const LegendH = styled.div`
   font-weight: 700;
   text-transform: uppercase;
   line-height: 300%;
-  @media Screen and (max-width: 768px){
-  display: flex;
-  justify-content: center;
+  @media Screen and (max-width: 768px) {
+    display: flex;
+    justify-content: center;
   }
 `;
 const Legendbtn = styled.div`
@@ -176,6 +191,18 @@ const Legendbtn = styled.div`
     margin-right: 30px;
   }
 `;
+const Legendpage = styled.div`
+  box-shadow: 0 5px 15px 0px rgba(0, 0, 0, 0.6);
+  transform: translatey(0px);
+  animation-name: ${Float};
+  animation-duration: 6s;
+  animation-iteration-count: infinite;
+  animation-timing-function: ease-in-out;
+  @media screen and (max-width: 768px) {
+    justify-content: center;
+    display: flex;
+  }
+`;
 
 const Legend = () => {
   return (
@@ -195,11 +222,11 @@ const Legend = () => {
       </LegendContent>
       <LegendContent1>
         <div>
-          <div className="bt">
+          <Legendpage>
             <button className="btn1">
               <LegendImg src={Image1} alt="" className="img1" />
             </button>
-          </div>
+          </Legendpage>
           <LegendH>1. Work in partnership</LegendH>
           <Legendh2>
             Work in partnership with local organizations in and out of the
@@ -207,22 +234,22 @@ const Legend = () => {
           </Legendh2>
         </div>
         <div>
-          <div className="bt">
+          <Legendpage>
             <button className="btn2">
               <LegendImg src={Image2} alt="" className="img1" />
             </button>
-          </div>
+          </Legendpage>
           <LegendH>2. Engage in community</LegendH>
           <Legendh2>
             Engage in community mobilization and sensitization
           </Legendh2>
         </div>
         <div>
-          <div className="bt">
+          <Legendpage>
             <button className="btn3">
               <LegendImg src={Image3} alt="" className="img1" />
             </button>
-          </div>
+          </Legendpage>
           <LegendH>3. Support organizations</LegendH>
           <Legendh2>
             Support organizations and projects representing the diversity of
@@ -230,11 +257,11 @@ const Legend = () => {
           </Legendh2>
         </div>
         <div>
-          <div className="bt">
+          <Legendpage>
             <button className="btn4">
               <LegendImg src={Image4} alt="" className="img1" />
             </button>
-          </div>
+          </Legendpage>
           <LegendH>4. improve our skill</LegendH>
           <Legendh2>
             Evaluation of grants to improve our skills and knowledge and we will

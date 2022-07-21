@@ -1,9 +1,14 @@
 import React from "react";
 
 //import components
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Arrow from "../img/Line-5.png";
 import Arrow1 from "../img/Line-4.png";
+
+const DonateAnimation = keyframes`
+to {left: 0px;}
+from {left: -400px;}
+`;
 
 const DonateContainer = styled.section`
   padding: 70px;
@@ -12,7 +17,12 @@ const DonateContainer = styled.section`
   }
   display: flex;
   justify-content: center;
-
+  position: relative;
+  width: 100%;
+  animation-name: ${DonateAnimation};
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
 `;
 const DonatePage = styled.div`
   padding: 20px;
@@ -61,7 +71,6 @@ const Donatecontent = styled.div`
   .donate {
     padding: 10px;
     display: flex;
-    
   }
 `;
 const Donatebtn = styled.div`
@@ -91,14 +100,14 @@ const Input = styled.div`
     border-radius: 0px 10px 10px 10px;
     font-size: 1rem;
     font-family: share tech;
-    @media Screen and (max-width: 480px){
+    @media Screen and (max-width: 480px) {
       width: 320px;
     }
   }
 `;
 const Input1 = styled.div`
   padding: 10px;
-  label{
+  label {
     font-size: 0.8rem;
     font-weight: 400;
     color: #143a5a;
@@ -152,7 +161,7 @@ const Donate = () => {
             <input type="number" placeholder="Other Amount" />
           </Input>
           <Input1>
-            <input type="checkbox"  required/>
+            <input type="checkbox" required />
             <label> Make This Month Donation</label>
           </Input1>
           <Donatebtn1>

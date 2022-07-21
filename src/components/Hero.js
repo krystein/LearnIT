@@ -1,12 +1,21 @@
 import React from "react";
 
 //import styled components
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Image10 from "../img/image-10.png";
 import Image2 from "../img/image-6.png";
 import Union from "../img/Union.png";
 import Donate from "../img/Donate.svg";
 import Call from "../img/Call.svg";
+
+const Activitiesanimation = keyframes`
+to {left: 0px;}
+from {left: -400px;}
+`;
+const Activityanimation = keyframes`
+to {right: 0px;}
+from {right: -400px;}
+`;
 
 const HeroContainer = styled.section`
   display: flex;
@@ -29,6 +38,11 @@ const HeroContent = styled.div`
   width: 50%;
   background-image: url(${Image2});
   margin-top: 60px;
+  position: relative;
+  animation-name: ${Activitiesanimation};
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
   @media Screen and (max-width: 1200px) {
     width: 100%;
     margin-top: 20px;
@@ -59,7 +73,7 @@ const HeroContent = styled.div`
   .btn1 {
     margin-left: 10rem;
     display: flex;
-    padding-top: 5px;
+    align-items: center;
     justify-content: center;
     width: 150px;
     height: 40px;
@@ -117,6 +131,7 @@ const HeroContent = styled.div`
   }
   .img1 {
     width: 30px;
+    height: 23px;
     @media Screen and (max-width: 1200px) {
       height: 30px;
       width: 30px;
@@ -135,6 +150,11 @@ const HeroContent1 = styled.div`
   width: 50%;
   background-image: url(${Image10});
   margin-top: 60px;
+  position: relative;
+  animation-name: ${Activityanimation};
+  animation-duration: 3s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
   @media Screen and (max-width: 1200px) {
     width: 100%;
     padding: 6rem;

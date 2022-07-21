@@ -1,13 +1,28 @@
 import React from "react";
 
 //import components
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 import Arrow from "../img/Arrow.svg";
 import Arrow1 from "../img/Arrow-1.svg";
 import Image1 from "../img/Be-empathic.svg";
 import Image2 from "../img/Be-inclusive.svg";
 import Image3 from "../img/Be-leaders.svg";
 import Image4 from "../img/Be-trustworthy.svg";
+
+const Valueanimation = keyframes`
+  0% {
+    border-radius: 0px 30px;
+    box-shadow: 0.25rem 0.25rem 3.38rem rgba(217, 217, 217, 0.5);
+    transform: scale(0);
+    justify-content: center;
+  }
+  50% {
+    border-radius: 0px 30px;
+    box-shadow: 0.25rem 0.25rem 3.38rem rgba(217, 217, 217, 0.5);
+    transform: scale(1.05);
+    justify-content: center;
+  }
+`;
 
 const ValueContainer = styled.section`
   padding: 70px;
@@ -34,7 +49,7 @@ const Valueh1 = styled.div`
   font-weight: 700;
 `;
 const ValueContent = styled.div`
-  transition: 3 s ease-in-out;
+  transition: 3s ease-in-out;
   display: grid;
   grid-template-columns: 1fr 1fr 1fr 1fr;
   grid-gap: 30px;
@@ -59,21 +74,26 @@ const ValueContent = styled.div`
       justify-content: center;
     }
   }
-  .img1 {
-    padding: 20px;
-    &:hover {
-      .img {
-        display: flex;
-        justify-content: center;
-      }
-      border-radius: 0px 30px;
-      box-shadow: 0.25rem 0.25rem 3.38rem rgba(217, 217, 217, 0.5);
-      transform: scale(1.05);
+`;
+const Valuepage = styled.div`
+  transform: translatey(0px);
+  animation-name: ${Valueanimation};
+  animation-duration: 6s;
+  animation-iteration-count: 1;
+  animation-timing-function: ease-in-out;
+  padding: 20px;
+  &:hover {
+    .img {
+      display: flex;
+      justify-content: center;
     }
-    @media Screen and (max-width: 1200px) {
-      border-radius: 0px 30px;
-      box-shadow: 0.25rem 0.25rem 3.38rem rgba(217, 217, 217, 0.5);
-    }
+    border-radius: 0px 30px;
+    box-shadow: 0.25rem 0.25rem 3.38rem rgba(217, 217, 217, 0.5);
+    transform: scale(1.05);
+  }
+  @media Screen and (max-width: 1200px) {
+    border-radius: 0px 30px;
+    box-shadow: 0.25rem 0.25rem 3.38rem rgba(217, 217, 217, 0.5);
   }
 `;
 const ValueImg = styled.img`
@@ -107,7 +127,7 @@ const Values = () => {
       </div>
       <Valueh1>Our Values</Valueh1>
       <ValueContent>
-        <div className="img1">
+        <Valuepage>
           <div className="img">
             <ValueImg src={Image1} alt="" />
           </div>
@@ -116,8 +136,8 @@ const Values = () => {
             We put ourselves in the other person’s shoes, we take time to
             understand his/her/their lived experience
           </Valueh2>
-        </div>
-        <div className="img1">
+        </Valuepage>
+        <Valuepage>
           <div className="img">
             <ValueImg src={Image2} alt="" />
           </div>
@@ -126,8 +146,8 @@ const Values = () => {
             Be inclusive We welcome diversity of voice, experiences and
             perspectives
           </Valueh2>
-        </div>
-        <div className="img1">
+        </Valuepage>
+        <Valuepage>
           <div className="img">
             <ValueImg src={Image3} alt="" />
           </div>
@@ -136,8 +156,8 @@ const Values = () => {
             We lead in the community leveraging our resources to benefit our
             charitable partners
           </Valueh2>
-        </div>
-        <div className="img1">
+        </Valuepage>
+        <Valuepage>
           <div className="img">
             <ValueImg src={Image4} alt="" />
           </div>
@@ -146,7 +166,7 @@ const Values = () => {
             We earn the trust of our donors, our community and charitable
             partners by being present, transparent and accessible
           </Valueh2>
-        </div>
+        </Valuepage>
       </ValueContent>
     </ValueContainer>
   );
