@@ -23,7 +23,7 @@ const Footercontent = styled.div`
   @media Screen and (max-width: 768px) {
     display: grid;
     justify-content: space-between;
-    margin-left: 30px;
+    padding-left: 30px;
   }
 `;
 const Footercontent1 = styled.div`
