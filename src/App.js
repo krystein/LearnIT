@@ -1,13 +1,13 @@
 import React, { useState } from "react";
-import Final from './components/index';
+import Final from "./components/index";
 import GlobalStyle from "./globalstyles";
 
 function App() {
-    const [isOpen, setIsOpen] = useState(false);
+  const [isOpen, setIsOpen] = useState(false);
 
-    const toggle = () => {
-      setIsOpen(!isOpen);
-    };
+  const toggle = () => {
+    setIsOpen(!isOpen);
+  };
   return (
     <div>
       <GlobalStyle />
