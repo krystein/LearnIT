@@ -22,6 +22,7 @@ const PrinciplesContainer = styled.section`
     padding: 0px 70px;
     @media Screen and (max-width: 1200px) {
       grid-template-columns: 1fr;
+      padding: 0px 30px;
     }
   }
 `;
