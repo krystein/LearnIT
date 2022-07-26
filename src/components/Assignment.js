@@ -7,7 +7,6 @@ import Arrow from "../img/Arrow.svg";
 import Arrow1 from "../img/Arrow-1.svg";
 import Rectangle from "../img/Rectangle-3885.png";
 
-
 const AssignmentContainer = styled.div`
   padding: 70px;
   @media Screen and (max-width: 1200px) {
@@ -184,6 +183,10 @@ const arrowButton = css`
   &:hover {
     background: #cd853f;
     transform: scale(1.05);
+  }
+  @media screen and (max-width: 768px) {
+    width: 35px;
+    height: 35px;
   }
 `;
 

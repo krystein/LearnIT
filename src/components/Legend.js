@@ -25,6 +25,7 @@ const Float = keyframes`
 `;
 
 const LegendContainer = styled.section`
+  margin-top: 30px;
   padding: 70px;
   @media Screen and (max-width: 1200px) {
     padding: 20px;
